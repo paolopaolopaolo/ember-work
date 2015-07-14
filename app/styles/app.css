@@ -1,0 +1,31 @@
+* {
+	font-family: garamond, arial, sans-serif;
+}
+
+h4 {
+	color: red;
+	margin: 5px 20px;
+}
+
+button {
+	border: none;
+	background-color: #ddd;
+	box-shadow: -2px 2px 2px #eee;
+	margin: 5px 20px;
+	font-size: 20px;
+	padding: 4px;
+}
+
+.load-bar-outline {
+	width: 300px;
+	padding: 12px 5px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	margin: 5px 20px;
+}
+
+.load-bar {
+	height: 25px;
+	position: relative;
+	background-color: pink;
+}
