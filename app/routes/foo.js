@@ -35,7 +35,8 @@ export default Ember.Route.extend({
 		if (progress < limit) {
 			return {"progress": progress.toString() + "%"};
 		} else {
-			time_holder.set("progress", 0);
+			time_holder.set("progress", 100);
+			clearInterval(this.sexyInterval);
 			return {"progress": "100%"};
 		}
 	},
@@ -46,10 +47,9 @@ export default Ember.Route.extend({
 		// @params: None
 		// @returns: Void
 		refresh: function () {
-			var randWait,
-				progress = time_holder.get("progress");
+			this.set("model.progress", 0);
 			// Mimicks a 1 second Poll interval
-			setInterval(function () {
+			this.sexyInterval = setInterval(function () {
 				// Invoke model hook
 				this.refresh();
 			}.bind(this), 1000);
